@@ -3,6 +3,7 @@ export const environment = {
   appName: 'LearnBasicJS',
   appSlogan: 'Aprenda topicos básico sobre a linguagem JavaScript',
   apiURL: 'http://localhost:8080',
+  authMethod: 'popup',
   firebase: {
     apiKey: 'AIzaSyBp6N79lnnwcicHyJzxzvfUcy3biVF9chQ',
     authDomain: 'frontendeiros-25959.firebaseapp.com',
