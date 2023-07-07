@@ -12,12 +12,16 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { environment } from './../environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const app = {
   siteName: 'LearnBasicJS',
   siteSlogan: 'Aprenda tópicos basicos de JavaScript',
   apiBaseURL: 'http://localhost:8080/'
 }
+
+const result = environment.apiURL + '/articles'.toString;
+
 
 
 
@@ -26,6 +30,7 @@ const app = {
   declarations: [AppComponent],
   imports: [
     HttpClientModule,
+    ReactiveFormsModule,
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,

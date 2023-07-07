@@ -3,41 +3,45 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Faça Contato</ion-title>
+    <ion-title class="ion-text-center">Faça Contato</ion-title>
+    <ion-icon name="chatbubbles" size="large" class="ion-margin" slot="end"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Faça Contato</ion-title>
+      <ion-title asize="large">Faça Contato</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
-    <ion-list>
+  <div class="ion-padding">
 
+    <p>Preencha todos os campos abaixo para entrar em contato com a equipe do <em>{{ env.appName }}</em>.</p>
 
-      <ion-item>
-        <ion-input label="Nome:" type="string" placeholder="Seu Nome"></ion-input>
-      </ion-item>
+    <form *ngIf="!success">
 
-      <ion-item>
-        <ion-input label="E-mail:" type="email" placeholder="Seu E-mail"></ion-input>
-      </ion-item>
+      <p>
+        <ion-input label="Nome:" label-placement="floating" fill="outline" placeholder="Digite seu nome"></ion-input>
+      </p>
+      <p>
+        <ion-input label="E-mail:" inputmode="numeric" label-placement="floating" fill="outline"
+          placeholder="Digite seu e-mail"></ion-input>
+      </p>
+      <p>
+        <ion-input label="Assunto:" label-placement="floating" fill="outline"
+          placeholder="Digite o assunto do contato"></ion-input>
+      </p>
+      <p>
+        <ion-textarea label="Mensagem:" [autoGrow]="true" labelPlacement="floating" fill="outline"
+          placeholder="Mensagem do contato"></ion-textarea>
+      </p>
+      <p>
+        <ion-button>Enviar</ion-button>
+      </p>
 
-      <ion-item>
-        <ion-input label="Assunto:" type="string" placeholder="Motivo pelo contato"></ion-input>
-      </ion-item>
+    </form>
 
-      <ion-item>
-        <ion-input label="" type="text" placeholder="Insira o sua mensagem"></ion-input>
-      </ion-item>
+  </div>
 
-      <ion-segment-button value="pin" layout="icon-end">
-        <ion-label>Enviar</ion-label>
-        <ion-icon name="send-sharp"></ion-icon>
-      </ion-segment-button>
-    </ion-list>
-  </ion-list>
 </ion-content>
