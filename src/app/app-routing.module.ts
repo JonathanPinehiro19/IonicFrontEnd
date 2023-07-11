@@ -3,8 +3,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { environment as env } from './../environments/environment';
 import { AuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
+
+
 const toLogin = () => redirectUnauthorizedTo(['/login']);
 const toHome = () => redirectLoggedInTo(['/home']);
+const toView = () => redirectLoggedInTo(['/view'])
 
 const routes: Routes = [
   {
@@ -56,12 +59,16 @@ const routes: Routes = [
     loadChildren: () => import('./user/profile/profile.module').then(m => m.ProfilePageModule),
     canActivate: [AuthGuard],
     data: { authGuardPipe: toLogin }
+  },{
+    path: 'view/:id',
+    loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule)
   },
   {
     path: '**',
     redirectTo: '404',
     pathMatch: 'full'
   }
+
 ];
 
 @NgModule({

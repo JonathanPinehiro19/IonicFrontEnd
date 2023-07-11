@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { environment } from './../../../environments/environment';
@@ -9,31 +10,24 @@ import { environment } from './../../../environments/environment';
 })
 export class HomePage implements OnInit {
 
-  public response = environment.apiURL + '/articles';
-
-  loadArticle(){
-    this.http.get(environment.apiURL + '/articles').subscribe((response)=>{
-      console.log(response);
-      `${response}`
-     },(error)=>{
-      console.error(error)
-   })
-  }
+  articles: any;
 
   public env = environment;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  ngOnInit(content = JSON) {
-
-     this.http.get(environment.apiURL + '/articles').subscribe((response)=>{
-      console.log(response)
-     },(error)=>{
-      console.error(error)
-   })
+  ngOnInit() {
+    this.http.get(environment.apiURL + '/articles').subscribe(
+      (response) => {
+        console.log(response)
+        this.articles = response; // Atribua os dados ao array de artigos
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
 
   }
-
 
 
   // showMostViewd(limit: number){
