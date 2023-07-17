@@ -11,6 +11,18 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { environment } from './../environments/environment';
+<<<<<<< Updated upstream
+=======
+import { ReactiveFormsModule } from '@angular/forms';
+
+const app = {
+  siteName: 'LearnBasicJS',
+  siteSlogan: 'Aprenda tópicos basicos de JavaScript',
+  apiBaseURL: 'http://localhost:8080/'
+}
+
+const result = environment.apiURL + '/articles'.toString;
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [AppComponent],

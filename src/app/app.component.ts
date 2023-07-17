@@ -13,7 +13,12 @@ export class AppComponent {
   public appPages = [
     { title: 'Início', url: '/home', icon: 'home' },
     { title: 'Contatos', url: '/contacts', icon: 'chatbubbles' },
+<<<<<<< Updated upstream
     { title: 'Sobre', url: '/about', icon: 'information-circle' }
+=======
+    { title: 'Sobre-Nós', url: '/aboutus', icon: 'people' },
+    { title: 'Política de Privacidade', url: '/about', icon: 'information-circle' }
+>>>>>>> Stashed changes
   ];
 
   public appUser = {

@@ -48,14 +48,37 @@ const routes: Routes = [
   },
   {
     path: 'profile',
+<<<<<<< Updated upstream
     title: `${env.appName} - Perfil do Usuário`,
     loadChildren: () => import('./user/profile/profile.module').then( m => m.ProfilePageModule)
+=======
+    title: `${env.appName} - Perfil de Usuário`,
+    loadChildren: () => import('./user/profile/profile.module').then(m => m.ProfilePageModule),
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: toLogin }
+  },
+  {
+    path: 'aboutus',
+    title: `${env.appName} - Sobre Nós`,
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./pages/aboutus/aboutus.module').then( m => m.AboutusPageModule)
+  },
+  {
+    path: 'view/:id',
+    loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule)
+>>>>>>> Stashed changes
   },
   {
     path: '**',
     redirectTo: '404',
     pathMatch: 'full'
   },
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
 ];
 
 @NgModule({
