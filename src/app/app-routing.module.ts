@@ -59,7 +59,14 @@ const routes: Routes = [
     loadChildren: () => import('./user/profile/profile.module').then(m => m.ProfilePageModule),
     canActivate: [AuthGuard],
     data: { authGuardPipe: toLogin }
-  },{
+  },
+  {
+    path: 'aboutus',
+    title: `${env.appName} - Sobre-Nós`,
+    loadChildren: () => import('./pages/aboutus/aboutus.module').then( m => m.AboutusPageModule),
+    canActivate: [AuthGuard],
+  },
+{
     path: 'view/:id',
     loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule)
   },
@@ -67,7 +74,12 @@ const routes: Routes = [
     path: '**',
     redirectTo: '404',
     pathMatch: 'full'
+  },
+  {
+    path: 'aboutus',
+    loadChildren: () => import('./pages/aboutus/aboutus.module').then( m => m.AboutusPageModule)
   }
+
 
 ];
 

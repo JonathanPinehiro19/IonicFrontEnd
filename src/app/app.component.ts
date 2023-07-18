@@ -15,6 +15,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Início', url: '/home', icon: 'home' },
     { title: 'Contatos', url: '/contacts', icon: 'chatbubbles' },
+    { title: 'Sobre nós', url: '/aboutus', icon: 'people' },
     { title: 'Política de Privacidade', url: '/about', icon: 'information-circle' }
   ];
 
