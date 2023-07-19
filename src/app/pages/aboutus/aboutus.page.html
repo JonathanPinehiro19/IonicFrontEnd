@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sobre nós</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Sobre nós</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<div *ngFor="let user of users">
+  <ion-card class="coworker-card">
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src={{user.photo}}/>
+          </ion-avatar>
+          <ion-label>
+            <h1>{{user.name}}</h1>
+            <p>{{user.type}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-label>
+            <h2>{{user.email}}</h2>
+            <p>E-mail</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="logo-github" slot="start"></ion-icon>
+          <ion-label>
+            <a href="{{user.github}}" target="_blank">
+            <ion-button color="primary">GitHub Pessoal</ion-button>
+          </a>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</div>
+<div class="padding">
+<h3>Nosso objetivo</h3>
+<p>
+  Nós, como estudantes de programação, estamos unidos por um objetivo comum:
+  aproveitar ao máximo nossa jornada de aprendizado para desenvolver soluções
+  inovadoras. Compartilhamos a paixão por explorar as infinitas possibilidades
+  da programação e transformar ideias em realidade por meio do poder do
+  código.
+</p>
+
+<h3>Projetos em Destaque</h3>
+<p>
+  API em Java: Desenvolvemos uma API REST em Java, utilizando as melhores
+  práticas de desenvolvimento. Nossa API foi projetada para fornecer um
+  conjunto de endpoints eficientes e seguros, permitindo que os clientes se
+  conectem e interajam com nosso sistema de forma confiável. Implementamos
+  autenticação e autorização para garantir a segurança dos dados e oferecemos
+  uma documentação abrangente para facilitar a integração. </p> <p> Projeto FrontEnd
+  com JavaScript Vanilla: Colocamos em prática nossos conhecimentos em
+  JavaScript Vanilla para desenvolver um projeto de interface de usuário
+  envolvente e responsiva. Utilizando conceitos de design modernos e
+  interações intuitivas, criamos uma experiência de usuário única. Adotamos as
+  melhores práticas de desenvolvimento front-end para garantir um código limpo
+  e bem estruturado.</p> <p>Projeto Android com Ionic: Empreendemos um desafio
+  emocionante ao desenvolver um projeto Android usando o framework Ionic.
+  Aproveitamos a versatilidade e a facilidade de uso do Ionic para criar um
+  aplicativo nativo com uma interface de usuário elegante e intuitiva.
+  Utilizando recursos avançados do Ionic, como componentes personalizados e
+  integração com APIs REST, entregamos uma experiência de usuário perfeita e
+  funcionalidades ricas.</p>
+
+</div>
+
+</ion-content>
